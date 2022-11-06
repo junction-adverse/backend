@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 def listen():
-    app.run(host='0.0.0.0', port=105)
+    app.run(host='0.0.0.0', port=1337)
 
 @app.route('/youtubeinput/', methods=['GET', 'POST'])
 def take_youtube_request():
