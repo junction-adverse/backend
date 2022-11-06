@@ -1,1 +1,1 @@
-web: gunicorn --chdir ./services_ml app:app ad_analyzer_service_rest:app
+web: gunicorn --chdir ./services_ml ad_analyzer_service_rest:app
