@@ -1,4 +1,5 @@
 const DataUnionClient = require('@dataunions/client').DataUnionClient
+const StreamrClient = require('streamr-client')
 
 const PRIVATE_KEY = process.env.ADMIN_PRIVATE_KEY;
 const PUBLIC_KEY = process.env.ADMIN_ADDRESS;
@@ -9,6 +10,17 @@ const dataUnionClient = new DataUnionClient({
     },
     chain: 'polygon',
 });
+
+const streamr = new StreamrClient({
+    auth: {
+        privateKey: PRIVATE_KEY
+    }
+})
+
+const publish = async (endpoint, data) => {
+    const res = streamr.publish(endpoint, data);
+    return res
+}
 
 const createCampaign = async (name, description = "") => {
 
@@ -56,3 +68,4 @@ const refreshRevenue = async (campaignAddress) => {
 exports.createCampaign = createCampaign;
 exports.addCreator = addCreator;
 exports.refreshRevenue = refreshRevenue;
+exports.publish = publish;
