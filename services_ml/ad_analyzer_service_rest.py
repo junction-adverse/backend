@@ -6,9 +6,10 @@ from objects.video_analyzer_obj import adVideoAnalyzer
 
 app = Flask(__name__)
 
-
+'''
 def listen():
     app.run(host='0.0.0.0', port=1337)
+'''
 
 @app.route('/youtubeinput/', methods=['GET', 'POST'])
 def take_youtube_request():
@@ -54,6 +55,7 @@ class serviceListener:
     def evaluate_google_ai_video(self):
         return self.google_ai_analytics_processor.detect_logo_gcs(self.google_bucket_video_ul)
 
-
+'''
 if __name__ == '__main__':
     listen()
+'''
