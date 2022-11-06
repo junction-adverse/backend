@@ -1,0 +1,1 @@
+web: gunicorn --chdir ./services_ml app:app ad_analyzer_service_rest:app

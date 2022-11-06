@@ -1,1 +1,0 @@
-web: gunicorn ad_analyzer_service_rest:app
