@@ -1,0 +1,10 @@
+mkdir ~/ad-video-analyzer
+cd ~/ad-video-analyzer
+
+export GOOGLE_APPLICATION_CREDENTIALS=~/ad-video-analyzer/key.json
+
+SERVICE_ACCOUNT_NAME="ava-service-account-name"
+PROJECT_ID=$(gcloud config get-value core/project)
+SERVICE_ACCOUNT="$SERVICE_ACCOUNT_NAME@$PROJECT_ID.iam.gserviceaccount.com"
+
+gcloud iam service-accounts create $SERVICE_ACCOUNT_NAME
